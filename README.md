@@ -7,11 +7,13 @@ Dura's Artifacts are items in the game AFKArena that can be equipped by heroes t
 
 ## Algorithm
 
-The matching between heroes and artifacts are described with a bipartite graph *G*(*U*,*V*,*E*), where *U* is the set of heroes, *V* is the set of artifacts. Edge *e*=*u*→*v* exists if the hero-artifact pairing (*u*,*v*) exists in Shizzam's or Grub's guide. The weight of the edge *w*<sub>e</sub> is as follows. (*B*<sub>S</sub>=(*u*,*v*) exists in Shizzam's guide, *B*<sub>G</sub> = (*u*,*v*) exists in Grub's guide)
+The matching between heroes and artifacts are described with a bipartite graph *G*(*U*,*V*,*E*), where *U* is the set of heroes, *V* is the set of artifacts. Edge *e*=*u*→*v* exists if the hero-artifact pairing (*u*,*v*) exists in Shizzam's or Grub's guide. The weight of the edge *w*<sub>e</sub>=*M*.*H*. Multiplier *M* is as follows. (*B*<sub>S</sub>=(*u*,*v*) exists in Shizzam's guide, *B*<sub>G</sub> = (*u*,*v*) exists in Grub's guide)
 
 ||*B*<sub>G</sub>|!*B*<sub>G</sub>|
 |-|-|-|
 |*B*<sub>S</sub>|1|.5|
 |!*B*<sub>S</sub>|.7|0|
+
+*H* is hero priority defined which is a part of the input.
 
 The algorithm returns with a set of non-intersecting edges where the total weight is maximized.
